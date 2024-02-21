@@ -1,0 +1,20 @@
+{% include 'Navbar.html' %}
+
+<h1 class="text-center m-3">My Track "{{trackdata.name}}"</h1>
+
+<div class=" text-center col d-flex justify-content-center">
+
+    <table class="border " width="50%">
+        <tr class="border ">
+            <td class="border ">ID</td>
+            <td class="border ">Name</td>
+        </tr>
+
+
+        <tr class="border ">
+            <td class="border ">{{trackdata.id}}</td>
+            <td class="border ">{{trackdata.name}}</td>
+        </tr>
+    </table>
+
+</div>
