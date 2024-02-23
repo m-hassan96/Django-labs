@@ -1,0 +1,41 @@
+{%extends 'Parent.html'%}
+{%load static%}
+
+{%block title%}
+Your Tracks
+{%endblock%}
+
+{%block Header %}
+Your Tracks
+{% endblock%}
+
+{%block content%}
+
+<div class=" text-center col d-flex justify-content-center">
+
+    <table class="border " width="50%">
+        <tr class="border fw-bold">
+            <td class="border ">ID</td>
+            <td class="border ">Name</td>
+            <td class="border ">Actions</td>
+        </tr>
+
+        {%for track in data%}
+        <tr class="border text-muted">
+            <td class="border ">{{track.id}}</td>
+            <td class="border ">{{track.name}}</td>
+            <td class="border ">
+                <a href="{%url 'mytrack' track.id%}">Show</a>
+                <a href="">update</a>
+                <a href="">delete</a>
+            </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+</div>
+<div class=" text-center col d-flex justify-content-center mt-3">
+    <a class="btn btn-small btn-primary" href="{%url 'addCategory'%}">Add Category</a>
+</div>
+{%endblock%}

@@ -1,0 +1,36 @@
+{%extends 'Parent.html'%}
+
+{%block title%}
+Update Product
+{%endblock%}
+
+{%block Header %}
+Update Product
+{% endblock%}
+
+{%block content%}
+<form method="post" class="form text-center justify-content-center mt-3 ">
+    {%csrf_token%}
+
+    <label>Name:</label>
+    <input class="ms-3" type="text" name="name" value="{{product.name}}" required></br>
+
+    <label> Price: </label>
+    <input class="my-3 ms-4" type="text" name="price" value="{{product.price}}" required></br>
+
+    <label>Color:</label>
+    <input class="ms-4" type="text" name="color" value="{{product.color}}" required></br>
+
+    <label>Category:</label>
+    <input class="my-3 " type="text" name="category" value="{{product.category}}" required></br>
+
+    <label class="ms-5">Image:</label>
+    <input class="ms-4" type="file" name="image" src="{{product.image}}"></br>
+
+    <div class=" text-center col d-flex justify-content-center mt-3">
+        <button class="btn btn-small btn-primary" type="submit">Update Product</button>
+
+        <a class="btn btn-small btn-info ms-2" href="{%url 'products'%}">Back to Products</a>
+    </div>
+</form>
+{%endblock%}

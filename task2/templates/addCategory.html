@@ -1,0 +1,22 @@
+{%extends 'Parent.html'%}
+
+{%block title%}
+Add Category
+{%endblock%}
+
+{%block Header %}
+Add Category
+{% endblock%}
+
+{%block content%}
+<form method="post" class="form text-center justify-content-center mt-3 ">
+  {%csrf_token%}
+
+  <label>Name:</label>
+  <input class="ms-3" type="text" name="cName" placeholder="Enter Category Name" required></br>
+
+  <div class=" text-center col d-flex justify-content-center mt-3">
+    <button class="btn btn-small btn-primary" type="submit">Add Category</button>
+  </div>
+</form>
+{%endblock%}

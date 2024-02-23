@@ -1,0 +1,43 @@
+{%extends 'Parent.html'%}
+{%load static%}
+
+
+{%block title%}
+Your Product
+{%endblock%}
+
+{%block Header %}
+<h1 class=" text-center text-success">
+    Your Product "{{productDetails.name}}"
+</h1>
+{% endblock%}
+
+{%block content%}
+<div class=" text-center col d-flex justify-content-center">
+
+    <table class="border " width="50%">
+        <tr class="border fw-bold">
+            <td class="border ">ID</td>
+            <td class="border ">Name</td>
+            <td class="border ">Price</td>
+            <td class="border ">Color</td>
+            <td class="border ">Image</td>
+            <td class="border ">Category</td>
+        </tr>
+
+        <tr class="border text-muted">
+            <td class="border ">{{productDetails.id}}</td>
+            <td class="border ">{{productDetails.name}}</td>
+            <td class="border ">{{productDetails.price}}</td>
+            <td class="border ">{{productDetails.color}}</td>
+            <td class="border ">{{productDetails.image}}</td>
+            <td class="border ">{{productDetails.category}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class=" text-center col d-flex justify-content-center mt-3">
+    <a class="btn btn-small btn-primary" href="{%url 'products'%}">Back to Products</a>
+</div>
+{%endblock%}

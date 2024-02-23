@@ -1,0 +1,40 @@
+{%extends 'Parent.html'%}
+{%load static%}
+
+{%block title%}
+Your Products
+{%endblock%}
+
+{%block Header %}
+Your Products
+{% endblock%}
+
+{%block content%}
+
+<div class=" text-center col d-flex justify-content-center">
+
+    <table class="border " width="50%">
+        <tr class="border fw-bold">
+            <td class="border ">ID</td>
+            <td class="border ">Name</td>
+            <td class="border ">Actions</td>
+        </tr>
+
+        {%for productDetails in data%}
+        <tr class="border text-muted">
+            <td class="border ">{{productDetails.id}}</td>
+            <td class="border ">{{productDetails.name}}</td>
+            <td class="border ">
+                <a href="{%url 'productDetails' productDetails.id%}">Show</a>
+                <a href="{%url 'updateProduct' productDetails.id%}">update</a>
+                <a href="{%url 'deleteProduct' productDetails.id%}">delete</a>
+            </td>
+            {%endfor%}
+
+    </table>
+
+</div>
+<div class=" text-center col d-flex justify-content-center mt-3">
+    <a class="btn btn-small btn-primary" href="{%url 'addProduct'%}">Add Product</a>
+</div>
+{%endblock%}

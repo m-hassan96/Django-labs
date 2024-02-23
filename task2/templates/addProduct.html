@@ -1,0 +1,34 @@
+{%extends 'Parent.html'%}
+
+{%block title%}
+Add Product
+{%endblock%}
+
+{%block Header %}
+Add Product
+{% endblock%}
+
+{%block content%}
+<form method="post" class="form text-center justify-content-center mt-3 ">
+    {%csrf_token%}
+
+    <label>Name:</label>
+    <input class="ms-3" type="text" name="name" placeholder="Enter product Name" required></br>
+
+    <label> Price: </label>
+    <input class="my-3 ms-4" type="text" name="price" placeholder="Enter product price" required></br>
+
+    <label>Color:</label>
+    <input class="ms-4" type="text" name="color" placeholder="Enter product color" required></br>
+
+    <label>Category:</label>
+    <input class="my-3 " type="text" name="category" placeholder="Enter product Category" required></br>
+
+    <label class="ms-5">Image:</label>
+    <input class="ms-4" type="file" name="image"></br>
+
+    <div class=" text-center col d-flex justify-content-center mt-3">
+        <button class="btn btn-small btn-primary" type="submit">Add Product</button>
+    </div>
+</form>
+{%endblock%}
